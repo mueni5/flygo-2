@@ -1,0 +1,48 @@
+.flight-card {
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin: auto;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  max-width: 50%;
+  width: 30rem;
+}
+
+.flight-card__header {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.flight-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.flight-card__row span:first-child {
+  font-weight: 600;
+}
+
+.flight-card__row span:last-child {
+  color: #666;
+}
+
+
+.flight-card__cancel {
+  padding: 10px 15px;
+  background-color: #ff3333;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.flight-card__cancel:hover {
+  background-color: #cc0000;
+}

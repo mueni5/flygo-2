@@ -1,0 +1,8 @@
+.booking-row {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+}
+
+.booking-row td {
+  padding: 10px;
+}
