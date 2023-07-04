@@ -3,14 +3,14 @@ import StarRatings from 'react-star-ratings';
 import { useNavigate } from "react-router-dom";
 import './AirportCard.css';
 
-function AirportCard({id, image, rating, name}) {
+function AirportCard({ id, image, rating, name }) {
   const navigate = useNavigate()
 
-  function handleClick(){
+  function handleClick() {
     navigate(`/airports/${id}`);
   }
 
-  return(
+  return (
     <div className="airport-card" onClick={handleClick}>
       <img className="airport-card__image" src={image} alt={name} />
       <div className="airport-card__name">{name}</div>

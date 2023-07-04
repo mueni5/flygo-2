@@ -4,9 +4,9 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="bg-primary">
       <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3">
-        <div className="container-fluid">
+        <div className="container-fluid bg-primary ">
           <NavLink className="navbar-brand ms-3" to="#">
             Fly<span className="text-info">GO</span>
           </NavLink>

@@ -1,6 +1,13 @@
 
 
 .mystyle:hover {
-  background-color: black;
+  /* background-color: blue;
+  color: white; */
+  /* background-color: black; */
+  text-decoration: underline;
+}
+
+.nav-bar {
+  background-color: red;
 }
 

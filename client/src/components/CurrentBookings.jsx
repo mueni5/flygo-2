@@ -12,10 +12,12 @@ function CurrentBookings() {
     return <CurrentBookingsCard key={booking.id} date={booking.date} from={booking.from} to={booking.to} price={booking.price} departureTime={booking.departureTime}
                                 arrivalTime={booking.arrivalTime} airport={booking.airport}/>
   });
-
+  
   return(
     <>
-      <h1>Current Flights</h1>
+    <div className="current-bookings-header">
+      <h2>My Flights</h2>
+    </div>
       <div className="current-bookings">
         {bookings}
       </div>
