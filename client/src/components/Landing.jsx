@@ -1,12 +1,14 @@
 import React,{useState} from "react";
 import './Landing.css'
+import { useNavigate } from "react-router-dom";
 
 const Landing = ({id}) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstName, setName] = useState('');
+  const [lastName, setFrom] = useState('');
   const [destination, setDestination] = useState('');
   const [departureDate, setDepartureDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
+const navigate= useNavigate();
 
   
   const handleSubmit = (e) => {
@@ -15,6 +17,7 @@ const Landing = ({id}) => {
     // Perform search or booking logic here
     // You can use the form data (origin, destination, departureDate) to make API requests or handle the data as needed
     console.log('Submitted!');
+    navigate('/bookinglist')
   };
 
   return (
@@ -24,18 +27,18 @@ const Landing = ({id}) => {
       <label>
         <input
           type="text"
-          placeholder="Firstname"
+          placeholder="Name"
           value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
       </label>
 
       <label>
         <input
           type="text"
-          placeholder="Lastname"
+          placeholder="From"
           value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          onChange={(e) => setFrom(e.target.value)}
         />
       </label>
 
@@ -65,7 +68,7 @@ const Landing = ({id}) => {
         />
       </label>
 
-      <button type="submit">Submit</button>
+      <button type="submit" onSubmit={handleSubmit}>Submit</button>
     </form>
     </div>
   );
