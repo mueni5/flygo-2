@@ -3,14 +3,14 @@ import React from 'react';
 
 function Footer() {
   const footerStyle = {
-    backgroundColor: "aquamarine",
+    backgroundColor: "turquoise",
     padding: "20px",
     display: "flex",
     justifyContent: "space-between",
   };
   
   const columnStyle = {
-    flexBasis: "30%",
+    flexBasis: "60%",
   };
   return (
     <footer style={footerStyle}>
@@ -23,14 +23,14 @@ function Footer() {
 
     <div style={columnStyle}>
       <h3>Services</h3>
-      <p>Bookings</p>
-      <p>Reviews</p>
+      <ul>Bookings</ul>
+      <ul>Reviews</ul>
     </div>
 
     <div style={columnStyle}>
       <h3>Customer Support</h3>
       <ul> <i class="bi bi-telephone-inbound-fill">  +254712345678</i></ul>
-      <ul><i class="bi bi-envelope"> Email Us</i></ul> 
+      <ul><i class="bi bi-envelope"> Email Us: info@flygo.com</i></ul> 
 
     </div>
   </footer>
