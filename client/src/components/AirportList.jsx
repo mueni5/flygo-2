@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './AirportList.css';
 function AirportList(){
   const flights = [
     { id: 1, airline: 'Emirates', destination: 'Mumbai', time: '10:00 AM' },
@@ -40,6 +41,7 @@ function AirportList(){
         </div>
       </div>
     </div>
+   
   );
 };
 export default AirportList;
