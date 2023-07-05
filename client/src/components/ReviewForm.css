@@ -1,39 +1,43 @@
 .add-review-form {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-.r-f{
-  background-color: blue;
-    display: flex;
-    flex-direction: column;
-    
-  }
-  
-   label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  form input,
-  textarea {
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+ h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form {
+  background-color: #72d3d4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-left: 30%;
+}
+
+ label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+ form input,
+textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+ button {
+  padding: 10px 20px;
+  background-color: #266fc2;
+  border: 1px solid #0a0505;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
  button:hover {
-    background-color: #ccc;
-  }
+  background-color: #ccc;
+}
