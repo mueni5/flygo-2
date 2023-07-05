@@ -4,9 +4,9 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="bg-primary">
+    <div className="bg-warning">
       <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3">
-        <div className="container-fluid bg-primary ">
+        <div className="container-fluid bg-warning ">
           <NavLink className="navbar-brand ms-3" to="#">
             Fly<span className="text-info">GO</span>
           </NavLink>
@@ -25,7 +25,7 @@ const Navbar = () => {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active mx-2 text-info mystyle"
+                  className="nav-link active mx-2 text-dark mystyle"
                   aria-current="page"
                   to="#home"
                   style = {{}}
@@ -34,13 +34,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link active mx-2 text-info mystyle" to="#about">
+                <NavLink className="nav-link active mx-2 text-dark mystyle" to="#about">
                   About
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active mx-2 text-info mystyle"
+                  className="nav-link active mx-2 text-dark mystyle"
                   to="#schedule"
                 >
                   Schedule
@@ -48,7 +48,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active mx-2 text-info mystyle"
+                  className="nav-link active mx-2 text-dark mystyle"
                   to="#reviews"
                 >
                   Reviews

@@ -1,25 +1,22 @@
 import React from "react";
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
 
 
 function ProfileNav(){
   return(
-    <div style={{backgroundColor:"blue", display:"flex", alignItems:"center"}}>
-     
+    <div style={{backgroundColor:"orange",height:'50px', display:"flex",alignItems:"center"}}>
+     <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden' }}>
+      <img src="../Avatar/face.png" alt="Avatar" style={{ width: '100%', height: '100%',objectFit: 'cover' }}/>
+    </div>
+
+   
      <nav>
     
-        <div style={{display: "flex", flexWrap: "no-wrap", flexDirection: "row"}}>
-            <h5>USERNAME</h5>
-            <div style={{marginLeft: '80vw', fontWeight: '900'}}>
-              <NavLink to="/"> Home </NavLink>
-              <NavLink to="/">Log out</NavLink>
-            </div>
-        </div>
+   <div style={{ marginLeft: '80vw', display: 'flex', alignItems: 'center' }}>
+     <NavLink to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: '900', marginRight: '10px' }}>Home</NavLink>
+     <NavLink to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: '900', marginRight: '10px' }}>Logout</NavLink>
+   </div>
             
-        {/* <div>
-            <Link to="/"> Home </Link>
-            <Link to="/">Log out</Link>
-        </div> */}
      </nav>
     </div>
   );

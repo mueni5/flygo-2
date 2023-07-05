@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import CSS from "./list.css";
+import {useNavigate} from 'react-router-dom';
 
 const List = () => {
   const [bookings, setBookings] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulating fetching bookings from an API
@@ -15,22 +17,22 @@ const List = () => {
               {
                 id: 1,
                 user: "John Doe",
-                airport: "Airport ABC"
+                airport: "JKIA"
               },
               {
                 id: 2,
-                user: "Christine",
-                airport: "Airport XYZ"
+                user: "Christine Mbuvi",
+                airport: "Moi International Airport"
               },
               {
                 id: 3,
-                user: "Amos",
-                airport: "Airport DEF"
+                user: "Amos Wanene",
+                airport: "Kisumu International Airport"
               },
               {
                 id: 4,
-                user: "Boniface",
-                airport: "Airport GHI"
+                user: "Boniface Mabeche",
+                airport: "Eldoret International Airport"
               }
             ];
             resolve(bookingsData);
@@ -45,14 +47,16 @@ const List = () => {
 
     fetchBookings();
   }, []);
+   function handleItem(){
+    navigate(`/bookinglist/${1}`)
+   }
 
   return (
     <div>
-      <h1 className="list-heading">This is the list section of the booking list page</h1>
       <h2 className="list-title">Booking List</h2>
       <ul className="booking-list">
         {bookings.map(booking => (
-          <li key={booking.id} className="booking-item">
+          <li key={booking.id} className="booking-item" onClick={handleItem}>
             <h3 className="booking-user">{booking.user}</h3>
             <p className="booking-airport">{booking.airport}</p>
           </li>
