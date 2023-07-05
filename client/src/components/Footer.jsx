@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer() {
   const footerStyle = {
-    backgroundColor: "turquoise",
+    backgroundColor: "teal",
     padding: "20px",
     display: "flex",
     justifyContent: "space-between",
