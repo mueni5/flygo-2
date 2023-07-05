@@ -5,8 +5,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 80vw;
+  width: 100vw;
   margin: auto;
+  background: linear-gradient(to right, rgb(209, 192, 160), rgb(182, 227, 182), rgb(144, 144, 192));
 }
 
 .card {
@@ -45,4 +46,5 @@
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  background: linear-gradient(to right, rgb(209, 192, 160), rgb(182, 227, 182), rgb(144, 144, 192));
 }
