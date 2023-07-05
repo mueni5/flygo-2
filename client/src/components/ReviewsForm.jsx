@@ -29,7 +29,7 @@ const ReviewsForm = () => {
   return (
     <div>
       <h2>Add a Review</h2>
-      <form onSubmit={handleFormSubmit}>
+      <form className="form" onSubmit={handleFormSubmit}>
         <label>
           Name:
           <input
