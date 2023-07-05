@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_061339) do
     t.string "name"
     t.string "address"
     t.string "contact"
+    t.string "image"
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_061339) do
     t.datetime "departureTime"
     t.datetime "arrivalTime"
     t.string "flight_class"
+    t.float "price"
     t.integer "airport_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

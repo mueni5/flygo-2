@@ -119,6 +119,7 @@ class FlightsController < ApplicationController
         origin: flight.origin,
         destination: flight.destination,
         date: flight.date,
+        price: flight.price,
         departureTime: flight.departureTime,
         arrivalTime: flight.arrivalTime,
         flight_class: flight.flight_class,

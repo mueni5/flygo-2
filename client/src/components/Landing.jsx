@@ -8,9 +8,9 @@ const Landing = ({id}) => {
   const [destination, setDestination] = useState('');
   const [departureDate, setDepartureDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
-const navigate= useNavigate();
+  const navigate= useNavigate();
 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 

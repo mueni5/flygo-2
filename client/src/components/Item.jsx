@@ -3,12 +3,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = () => {
-  const [booking, setBooking] = useState(null);
+  const [flight, setFlight] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
   
   useEffect(() => {
     // Simulating fetching booking details from an API
+    fetch(`/bookinglist/${id}`)
+    .then((response) => response.json())
+    .then((data) => setFlight(data) )
     const fetchBooking = async () => {
       try {
         // Simulated API response
@@ -30,7 +33,7 @@ const Item = () => {
             resolve(bookingsData[id]);
           }, 1000); // Simulate delay
         });
-        setBooking(response);
+        setFlight(response);
       } catch (error) {
         console.log(error);
       }
@@ -38,7 +41,7 @@ const Item = () => {
     fetchBooking();
   }, [id]);
 
-  if (!booking) {
+  if (!flight) {
     return <div>Loading...</div>;
   }
 
@@ -53,14 +56,14 @@ const Item = () => {
   return (
     <div className="item">
       <h2>Booking Details</h2>
-      <p>Date: {booking.date}</p>
-      <p>From: {booking.from}</p>
-      <p>To: {booking.to}</p>
-      <p>Price: {booking.price}</p>
-      <p>Departure Time: {booking.departureTime}</p>
-      <p>Arrival Time: {booking.arrivalTime}</p>
-      <p>Airport: {booking.airport}</p>
-      <p>Class: {booking.class}</p>
+      <p>Date: {flight.date}</p>
+      <p>From: {flight.from}</p>
+      <p>To: {flight.to}</p>
+      <p>Price: {flight.price}</p>
+      <p>Departure Time: {flight.departureTime}</p>
+      <p>Arrival Time: {flight.arrivalTime}</p>
+      <p>Airport: {flight.airport}</p>
+      <p>Class: {flight.class}</p>
       <button onClick={handleBack}>Back</button>
       <button onClick={handleBook}>Book</button>
     </div>

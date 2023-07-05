@@ -80,7 +80,7 @@ class ReviewsController < ApplicationController
     reviews.map do |review|
       {
         id: review.id,
-        content: review.review,
+        review: review.review,
         rating: review.rating,
         user_name: review.user.username,
         airport_name: review.airport.name
