@@ -1,29 +1,46 @@
-# Rails.application.routes.draw do
-#   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-#   #index, show, destroy, create, 
-#   resources :reviews,  only: [:index, :show, :destroy, :create, :update]
-#   resources :users,    only: [:index, :show, :destroy, :create, :update]
-#   resources :flights,  only: [:index, :show, :destroy, :create, :update]
-#   resources :airports, only: [:index, :show, :destroy, :create, :update]
-#   resources :bookings, only: [:index, :show, :destroy, :create, :update]
-#   # Defines the root path route ("/")
-#   # root "articles#index"
-# end
-
-
 Rails.application.routes.draw do
-  # resources :airports, only: [:index]
+  #Index user flights
+  get '/user_flights',           to: 'flights#user_flights'
+  get '/users/:user_id/flights', to: 'flights#user_flights'
 
-  resources :users do
-    resources :flights, only: [:index]
-  end
 
-  resources :users do
-    resources :reviews, only: [:index]
-  end
+  #Show user flights
+  get '/user_flights/:flight_id',          to: 'flights#user_flight'
+  get '/users/:user_id/flights/:flight_id', to: 'flights#user_flight'
 
-  resources :airports do
-    resources :flights, only: [:index]
-  end
+
+  #index airport flights
+  get '/airport_flights',              to: 'flights#airport_flights'
+  get '/airports/:airport_id/flights', to: 'flights#airport_flights'
+
+
+  #Index user reviews
+  get '/user_reviews', to: 'reviews#user_reviews'
+  get '/users/:user_id/reviews', to:'reviews#user_reviews'
+
+
+  #Index airport reviews
+  get '/airport_reviews',             to: 'reviews#user_reviews'
+  get '/airport/:airport_id/reviews', to:'reviews#user_reviews'
+
+
+  resources :reviews
+  resources :users
+  resources :flights
+  resources :airports
+  resources :bookings
+
+
+  # resources :users do
+  #   resources :flights, only: [:index]
+  # end
+
+  # resources :users do
+  #   resources :reviews, only: [:index]
+  # end
+
+  # resources :airports do
+  #   resources :flights, only: [:index]
+  # end
 
 end

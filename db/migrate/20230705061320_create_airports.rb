@@ -5,7 +5,7 @@ class CreateAirports < ActiveRecord::Migration[7.0]
       t.string :address
       t.string :contact
       t.float :rating
-
+    
       t.timestamps
     end
   end
