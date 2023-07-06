@@ -6,6 +6,8 @@ Welcome to Flygo Web Application, a lightweight and efficient flight booking sys
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Relationships](#relationships)
+- [Endpoints](#endpoints)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -22,6 +24,83 @@ Flygo2 is a flight booking system designed to simplify the process of booking fl
 - Reserve seats and complete the booking process securely.
 - Manage existing reservations, including cancellation and modification.
 - User authentication and account management functionality.
+
+## Table Relationships - Airport, Booking, Flight, Review, User
+    The application has five main tables: Airport, Booking, Flight, Review, and User. These tables represent different entities and have specific relationships with each other.
+
+Airport Table
+
+    The Airport table represents airports and has the following relationships:
+
+    has_many :reviews: An airport can have multiple reviews written by users.
+
+    has_many :flights: An airport can have multiple flights departing from or arriving at it.
+
+Booking Table
+
+    The Booking table represents flight bookings made by users and has the following relationships:
+
+    belongs_to :user: A booking belongs to a user who made the reservation.
+
+    belongs_to :flight: A booking is associated with a specific flight.
+
+Flight Table
+
+  The Flight table represents individual flights and has the following relationships:
+
+   belongs_to :airport: A flight belongs to an airport, either as a departure or arrival location.
+
+   has_many :bookings: A flight can have multiple bookings made by different users.
+
+Review Table
+
+  The Review table represents reviews written by users for airports and has the following relationships:
+
+  belongs_to :user: A review is written by a user.
+
+  belongs_to :airport: A review is associated with a specific airport.
+
+User Table
+
+ The User table represents users of the application and has the following relationships:
+
+ has_many :reviews: A user can write multiple reviews for different airports.
+
+ has_many :bookings: A user can make multiple flight bookings.
+
+ has_many :flights, through: :bookings.
+
+ has_secure_password: The user's password is securely stored and authenticated.
+
+Additional validations are also applied to the User model to ensure data integrity and completeness.
+
+## Endpoints
+Index user flights:
+
+  GET /user_flights
+  GET /users/:user_id/flights
+
+Show user flight:
+
+  GET /user_flights/:flight_id
+  GET /users/:user_id/flights/:flight_id
+
+Index airport flights:
+
+  GET /airport_flights
+  GET /airports/:airport_id/flights
+
+Index user reviews:
+
+  GET /user_reviews
+  GET /users/:user_id/reviews
+  POST /signup - Create a new user.
+
+Current user:
+
+  GET /me - Retrieve information about the current user.
+  POST /login - Authenticate and log in a user.
+  DELETE /logout - Log out the current user.
 
 ## Installation
 
