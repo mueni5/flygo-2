@@ -7,9 +7,10 @@ function AirportCard({ id, image, rating, name }) {
   const navigate = useNavigate()
 
   function handleClick() {
-    navigate(`/airports/${id}`);
+    // navigate(`/airports/${id}`);
+    navigate(`/airports/${id}?name=${encodeURIComponent(name)}`);
   }
-
+  
   return (
     <div className="airport-card" onClick={handleClick}>
       <img className="airport-card__image" src={image} alt={name} />

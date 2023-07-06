@@ -3,6 +3,7 @@ body {
   /* background: gray; */
   font-family: "Poppins", sans-serif;
 }
+
 section {
   display: grid;
   place-items: center;

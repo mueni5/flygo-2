@@ -33,6 +33,10 @@
 
 
 /* Item.css */
+.item-container {
+  /* background-color: red; */
+  height: 62vh;
+}
 
 .item {
   display: flex;
@@ -47,6 +51,7 @@
   max-width: 800px;
   background-color: #f5f5f5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
 }
 
 .item h2 {

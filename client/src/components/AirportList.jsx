@@ -2,23 +2,25 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './AirportList.css';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 
 function AirportList() {
-  const params = useParams();
+  const {id} = useParams();
   const [airportFlights, setAirportFlights] = useState([]);
+  // const [flights, setFlights] = useState([]);
   const navigate = useNavigate();
-
-  const url = `/airport_flights?airport_id=${params.id}`;
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get('name');
 
   useEffect(() => {
-    fetch(url)
+    fetch(`/airport_flights?airport_id=${id}`)
       .then(response => response.json())
       .then(data => setAirportFlights(data))
       .catch((error) => alert(error));
-  }, [url]);
+  }, [id, airportFlights]);
 
+  
   const flights = airportFlights.map((airportFlight) => {
     return {
       id: airportFlight.id,
@@ -28,21 +30,22 @@ function AirportList() {
       departureTime: airportFlight.departureTime,
       arrivalTime: airportFlight.arrivalTime,
       flightClass: airportFlight.flight_class,
+      airportName: airportFlight.airport_name
     }
   })
-
 
   function handleBook(id){
     navigate(`/bookinglist/${id}`);
   }
   
- 
+  // const flight = flight[0];
+
   return (
     <div className="container">
       <div className="row">
         <div className="col">
           <div className="card">
-            <div className="card-header">Jomo Kenyatta International Airport</div>
+            <div className="card-header">{name}</div>
             <div className="card-body">
               <table className="table">
                 <thead>

@@ -3,42 +3,17 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = () => {
-  const [flight, setFlight] = useState(null);
+  const [flight, setFlight] = useState({});
   const { id } = useParams();
+  // const [routeId, setRouteId] = useState(id)
   const navigate = useNavigate();
   
   useEffect(() => {
     // Simulating fetching booking details from an API
-    fetch(`/bookinglist/${id}`)
+    fetch(`/flights/${id}`)
     .then((response) => response.json())
-    .then((data) => setFlight(data) )
-    const fetchBooking = async () => {
-      try {
-        // Simulated API response
-        const response = await new Promise(resolve => {
-          setTimeout(() => {
-            const bookingsData = {
-              1: {
-                date: "2023-12-25",
-                from: "New York",
-                to: "San Francisco",
-                price: "$300",
-                departureTime: "08:00",
-                arrivalTime: "11:00",
-                airport: "JFK",
-                class: "Economy"
-              },
-              // ...Other bookings
-            };
-            resolve(bookingsData[id]);
-          }, 1000); // Simulate delay
-        });
-        setFlight(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchBooking();
+    .then((data) => { console.log(data); setFlight(data[0]); console.log(flight);})
+    .catch((error) => alert(error.message))
   }, [id]);
 
   if (!flight) {
@@ -50,23 +25,45 @@ const Item = () => {
   }
 
   const handleBook = () => {
+
+    //Add the booking or use the booking endpoint to add a booking(user - flight relationship)
+    // fetch(`/bookings`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     user_id: flight.user_id,    ///Change the id here to the user id
+    //     flight_id: flight.flight_id,
+    //   }),
+    // }).then((response) => response.json())
+    // .then((data) => {
+    //   console.log(data);
+    //   alert("Booking successful");
+    //   navigate("/profile");
+    // })
+    // .catch((error) => alert(error.message));
+
     navigate("/profile");
   }
-
+  
   return (
-    <div className="item">
-      <h2>Booking Details</h2>
-      <p>Date: {flight.date}</p>
-      <p>From: {flight.from}</p>
-      <p>To: {flight.to}</p>
-      <p>Price: {flight.price}</p>
-      <p>Departure Time: {flight.departureTime}</p>
-      <p>Arrival Time: {flight.arrivalTime}</p>
-      <p>Airport: {flight.airport}</p>
-      <p>Class: {flight.class}</p>
-      <button onClick={handleBack}>Back</button>
-      <button onClick={handleBook}>Book</button>
+    <div className="item-container">
+      <div className="item">
+        <h2>Booking Details</h2>
+        <p>Date: {flight.date}</p>
+        <p>Origin: {flight.origin}</p>
+        <p>Destination: {flight.destination}</p>
+        <p>Price: {flight.price}</p>
+        <p>Departure Time: {flight.departureTime}</p>
+        <p>Arrival Time: {flight.arrivalTime}</p>
+        <p>Airport: {flight.airport_name}</p>
+        <p>Class: {flight.flight_class}</p>
+        <button onClick={handleBack}>Back</button>
+        <button onClick={handleBook}>Book</button>
+      </div>
     </div>
+    
   );
 }
 
