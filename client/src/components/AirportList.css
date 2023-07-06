@@ -3,7 +3,8 @@
     place-items: center;
     width: 180vw;
     height: 65vh;
-    background: linear-gradient(to right, rgb(219, 149, 20), rgb(147, 190, 147), rgba(17, 135, 123, 0.852));
+    /* background: linear-gradient(to right, rgb(219, 149, 20), rgb(147, 190, 147), rgba(17, 135, 123, 0.852)); */
+    /* background-color: gray; */
     margin-top: 15px;
     margin-bottom: 15px;
     /* margin: auto; */
