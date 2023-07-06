@@ -11,10 +11,10 @@ function ProfileNav(){
 
    
      <nav>
-    
+     
    <div style={{ marginLeft: '80vw', display: 'flex', alignItems: 'center' }}>
-     <NavLink to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: '900', marginRight: '10px' }}>Home</NavLink>
-     <NavLink to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: '900', marginRight: '10px' }}>Logout</NavLink>
+     <NavLink to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: '700', marginRight: '10px' }}>Home</NavLink>
+     <NavLink to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: '700', marginRight: '10px' }}>Logout</NavLink>
    </div>
             
      </nav>

@@ -1,6 +1,4 @@
-
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import StarRatings from 'react-star-ratings';
 import "./YourReviews.css";
 
@@ -24,6 +22,7 @@ const reviewsData = [
     rating: 1
   }
 ];
+
 const ReviewCard = ({ review, onDelete, onEdit }) => {
   return (
     <div className="card">
@@ -42,7 +41,13 @@ const ReviewCard = ({ review, onDelete, onEdit }) => {
     </div>
   );
 };
+
+
+
+
 const YourReviews = () => {
+  const [reviews, setReviews] = useState(reviewsData);
+  
   const handleDelete = (reviewId) => {
     // Delete logic here
     console.log(`Delete review with id: ${reviewId}`);
@@ -70,3 +75,37 @@ const YourReviews = () => {
   );
 };
 export default YourReviews;
+
+
+
+
+
+// useEffect(() => {
+//     fetch(`/user_reviews?user_id=`);
+//   }, []);
+
+//   const handleEdit = (reviewId) => {
+//     const editedReview = reviews.find((review) => review.id === reviewId);
+//     console.log(editedReview);
+//   };
+
+//   const handleDelete = (reviewId) => {
+//     const deletedReview = reviews.find((review) => review.id === reviewId);
+//     console.log(deletedReview);
+//   };
+
+//   return (
+//     <div className="your-reviews">
+//       <h1>Your Reviews</h1>
+//       <div className="review-container">
+//         {reviews.map((review) => (
+//           <ReviewCard
+//             key={review.id}
+//             review={review}
+//             onDelete={handleDelete}
+//             onEdit={handleEdit}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );

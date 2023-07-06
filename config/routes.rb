@@ -23,6 +23,17 @@ Rails.application.routes.draw do
   get '/airport_reviews',             to: 'reviews#user_reviews'
   get '/airport/:airport_id/reviews', to:'reviews#user_reviews'
 
+  # user_signup
+  post '/signup', to: "users#create"
+  # current user
+  get '/me', to: "users#show"
+
+
+  post '/login', to:"session#create"
+  delete '/logout', to:"session#destroy"
+
+
+
 
   resources :reviews
   resources :users

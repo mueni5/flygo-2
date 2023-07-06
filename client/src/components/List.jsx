@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CSS from "./list.css";
+import "./List.css";
 import {useNavigate} from 'react-router-dom';
 
 const List = () => {
