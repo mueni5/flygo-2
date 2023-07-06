@@ -1,11 +1,13 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ReviewForm.css';
 
 const ReviewsForm = () => {
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(0);
+  const [airport, setAirport] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,10 +16,23 @@ const ReviewsForm = () => {
     console.log("Rating:", rating);
   };
 
+  const handleClick = () => {
+    // Perform click logic here
+    console.log("Button clicked!");
+  };
+
+  useEffect(() => {
+    // This code will be executed whenever 'message', 'rating', or 'airport' changes.
+    console.log("Message:", message);
+    console.log("Rating:", rating);
+    console.log("Airport:", airport);
+  }, [message, rating, airport]);
+
+
   return (
     <div
       style={{
-        backgroundColor: "orange",
+        background: "linear-gradient(to right, rgb(209, 192, 160), rgb(182, 227, 182), rgb(144, 144, 192))",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -46,6 +61,28 @@ const ReviewsForm = () => {
               marginBottom: "10px",
             }}
           ></textarea>
+          
+          {/* New input field for airport selection */}
+          <label htmlFor="airport">Airport:</label>
+          <select  
+            name="airport"
+            value={airport}
+            onChange={(e) => setAirport(e.target.value)}>
+
+            <option value="">Select an airport</option>
+            <option value="JKIA">Dubai International Airport</option>
+            <option value="Eldoret">Moi International Airport</option>
+            <option value="Moi">Eldoret International Airport</option>
+            <option value="Wilson">Wilson Airport</option>
+            <option value="Eldoret">Jomo Kenyatta International Airport</option>
+            <option value="Moi">John F. Kennedy International Airport</option>
+            <option value="Wilson">Los Angeles International Airport</option>
+            <option value="Wilson">Heathrow Airport</option>
+
+          </select>
+
+
+
           <label htmlFor="rating">Rating:</label>
           <input
             type="number"
@@ -58,6 +95,7 @@ const ReviewsForm = () => {
           <input
             type="submit"
             value="Submit"
+            onClick={handleClick}
             style={{
               padding: "10px 20px",
               fontSize: "16px",
